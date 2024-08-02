@@ -1,7 +1,5 @@
-*.class
-.DS_Store
-.metadata
-.settings
+*bin/
+.settings/
 .classpath
 .project
 target/
