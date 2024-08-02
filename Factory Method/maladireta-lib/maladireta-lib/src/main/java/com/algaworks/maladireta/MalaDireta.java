@@ -8,7 +8,7 @@ import com.algaworks.contato.Contatos;
 public abstract class MalaDireta {
 	
 	protected abstract Contatos criarContatos();
-
+	
 	public boolean enviarEmail(String mensagem) {
 		List<Contato> contatos = criarContatos().todos();
 		

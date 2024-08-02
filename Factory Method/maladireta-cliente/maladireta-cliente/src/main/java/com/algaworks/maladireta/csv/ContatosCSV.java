@@ -1,20 +1,28 @@
-package com.algaworks.contato;
+package com.algaworks.maladireta.csv;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URI;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.thoughtworks.xstream.XStream;
+import com.algaworks.contato.Contato;
+import com.algaworks.contato.Contatos;
 
 import au.com.bytecode.opencsv.CSVReader;
 
-public class Contatoss {
+public class ContatosCSV implements Contatos {
+	
+	private String nomeArquivo;
 
-	public List<Contato> recuperarContatosCSV(String nomeArquivo) {
+	public ContatosCSV(String nomeArquivo) {
+		super();
+		this.nomeArquivo = nomeArquivo;
+	}
+
+	@Override
+	public List<Contato> todos() {
 		List<Contato> contatos = new ArrayList<>();
 		CSVReader csvReader = null;
 		
@@ -37,14 +45,6 @@ public class Contatoss {
 		}
 		
 		return contatos;
-    }
+	}
 
-    @SuppressWarnings("unchecked")
-    public List<Contato> recuperarContatosXML(String nomeArquivo) {
-        XStream xstream = new XStream();
-        xstream.alias("contatos", List.class);
-        xstream.alias("contato", Contato.class);
-        URL arquivo = this.getClass().getResource("/" + nomeArquivo);
-        return (List<Contato>) xstream.fromXML(arquivo);
-    }
 }
