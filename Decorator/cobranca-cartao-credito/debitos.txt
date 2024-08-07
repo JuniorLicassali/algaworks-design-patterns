@@ -1,0 +1,1 @@
+Cliente [nome=Roi kane, cpf=150.111.111-20] | CartaoCredito [numero=111 111 111 111, nome=Ricardao Ta bebe, vencimento=2026-05, codigoSeguranca=111] | R$150.0
